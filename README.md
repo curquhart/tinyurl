@@ -7,6 +7,7 @@ shortened form back into the original. GET requests are cached behind CloudFront
 Building
 --------
 ```shell
+npm install
 npm run build
 ```
 
@@ -16,6 +17,7 @@ Deploying
 2. Setup some AWS credentials.
 3. Deploy.
 ```shell
+npm --prefix cdk install
 npm --prefix cdk run cdk -- deploy --all
 ```
 
