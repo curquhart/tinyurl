@@ -1,0 +1,14 @@
+name: TinyURL Pipeline
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  synth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm run build
+      - run: npm --prefix cdk run cdk -- synth CertStack
+      - run: npm --prefix cdk run cdk -- synth TinyURLStack
